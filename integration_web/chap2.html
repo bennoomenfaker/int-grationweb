@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        //const element=<h1>Bienvenue a tous</h1>;
+        //ReactDOM.render(element,document.getElementById('root'));
+
+        /*const apprenant={
+            nomApprenant:'Foulen',
+            prenomApprenant:'Ben foulen'
+        };*/
+
+        /*function accueilEtudiant(apprenant){
+            return apprenant.nomApprenant+' '+apprenant.prenomApprenant;
+        }
+
+        const elt=(<strong>Bonne découverte de React {accueilEtudiant(apprenant)}</strong>);*/
+
+         /*class AccueilEtudiant extends React.Component{
+            render(){
+                return <strong>Bonne decouverte de react</strong>
+            }
+         }*/
+
+       class Bienvenuestate extends React.Component{
+            constructor(props){
+                super(props);
+
+                let prenom=this.props.saisie.split(" ")[0];
+                this.state= {saisie: prenom};
+            }
+
+            render(){
+                return (<h1>Bonjour {this.state.saisie} !</h1>)
+            }
+            
+       }
+
+         /*class Bienvenue extends React.Component{
+
+            
+
+            render(){
+                return <h1>Bonjour{this.state.saisie}!</h1>
+            }
+            
+         }*/
+
+         ReactDOM.render(<Bienvenuestate saisie="Aymen Ftita"/>,document.getElementById('root'))
+    </script>
+</body>
+</html>
